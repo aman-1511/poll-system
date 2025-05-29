@@ -1,7 +1,7 @@
 // API client for making HTTP requests to the backend
 
 // Get the API URL from environment variables
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000';
+const API_URL = import.meta.env.VITE_API_URL || 'https://poll-system-eight.vercel.app/';
 
 console.log('API URL:', API_URL);
 
@@ -11,7 +11,7 @@ console.log('API URL:', API_URL);
  */
 export const fetchPolls = async () => {
   try {
-    const response = await fetch(`${API_URL}/api/polls`);
+    const response = await fetch(`https://poll-system-eight.vercel.app/api/polls`);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
@@ -28,7 +28,7 @@ export const fetchPolls = async () => {
  */
 export const fetchActivePoll = async () => {
   try {
-    const response = await fetch(`${API_URL}/api/polls/active`);
+    const response = await fetch(`https://poll-system-eight.vercel.app//api/polls/active`);
     if (response.status === 404) {
       return null; // No active poll
     }
@@ -48,7 +48,7 @@ export const fetchActivePoll = async () => {
  */
 export const fetchStudents = async () => {
   try {
-    const response = await fetch(`${API_URL}/api/students`);
+    const response = await fetch(`https://poll-system-eight.vercel.app//api/students`);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
@@ -65,7 +65,7 @@ export const fetchStudents = async () => {
  */
 export const checkHealth = async () => {
   try {
-    const response = await fetch(`${API_URL}/health`);
+    const response = await fetch(`https://poll-system-eight.vercel.app//health`);
     return response.ok;
   } catch (error) {
     console.error('Health check failed:', error);

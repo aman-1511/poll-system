@@ -1,7 +1,7 @@
 import { io } from 'socket.io-client';
 
 // Get Socket URL from environment variables
-const SOCKET_URL = import.meta.env.VITE_SOCKET_URL || 'http://localhost:4000';
+const SOCKET_URL = import.meta.env.VITE_SOCKET_URL || 'https://poll-system-eight.vercel.app/';
 
 console.log('Connecting to socket server at:', SOCKET_URL);
 
